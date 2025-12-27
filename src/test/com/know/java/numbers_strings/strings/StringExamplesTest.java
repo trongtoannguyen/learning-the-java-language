@@ -71,12 +71,14 @@ class StringExamplesTest {
 
     @Test
     void parseFromString() {
-        String[] s = new String[]{"3", "5", "45.5"};
-        float a = Float.parseFloat(s[0]);
-        int b = Integer.parseInt(s[1]);
-        double c = Double.parseDouble(s[2]);
-        assertEquals(3f, a);
-        assertEquals(5, b);
-        assertEquals(45.5, c);
+        // assert is primitive type after parsing
+        String numString = "2025";
+        int intValue = sut.parseIntFromString(numString);
+        float fValue = sut.parseFloatFromString(numString);
+        assertEquals(2025, intValue);
+        assertEquals(2025f, fValue);
+
+        // assert a Float object
+        assertInstanceOf(Float.class, Float.valueOf(numString));
     }
 }

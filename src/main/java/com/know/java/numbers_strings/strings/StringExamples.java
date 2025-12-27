@@ -3,7 +3,7 @@ package com.know.java.numbers_strings.strings;
 public class StringExamples {
 
     public static void main(String[] args) {
-        new StringExamples().parseTypeFromString(new String[]{"3", "5", "9"});
+        new StringExamples().createStrings();
     }
 
     public void createStrings() {
@@ -51,12 +51,11 @@ public class StringExamples {
                 floatVar, intVar, stringVar);
     }
 
-    public void parseTypeFromString(String[] args) {
-        float a = Float.parseFloat(args[0]);
-        int b = Integer.parseInt(args[1]);
-        double c = Double.parseDouble(args[2]);
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
+    public int parseIntFromString(String s) {
+        return Integer.parseInt(s);
+    }
+
+    public float parseFloatFromString(String s) {
+        return Float.parseFloat(s);
     }
 }

@@ -79,22 +79,31 @@ println(fs);
 
 ## Convert Strings to Numbers
 
-The `Number` subclasses that wrap primitie numeric types(`Byte`, `Integer`, `Double`, .etc.) each provide a class method
-named `parse{Type}()` that converts a string to a requivalent object type.
+The `Number` subclasses that wrap primitive numeric types(`Byte`, `Integer`, `Double`, .etc.) each provide a class
+method
+named `parse{Type}()` that converts a string to an equivalent value.
 
 For example:
 
 ```java
-public static void main(String[] args){
-    if (args.length == 2) {
-         // convert strings to numbers
-        float a = Float.parseFloat(args[0]);
-        float b = Float.parseFloat(args[1]);
-        int c = Integer.parseInt(args[0]);
-
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
-        System.out.println("c = " + c);
-    }
+public int parseIntFromString(String s) {
+    return Integer.parseInt(s);
 }
+
+public float parseFloatFromString(String s) {
+    return Float.parseFloat(s);
+}
+
 ```
+
+In case you need to get an equivalent object, each wrapper numeric class provides a class method named `valueOf()` and
+get primitive value using `xxxValue()` method. For example:
+
+```java
+Float a = Float.valueOf(args[0]);
+
+// get primitive value
+float v = a.floatValue();
+```
+
+The first approach is supposed faster, since it doesn't involve creating an object.
