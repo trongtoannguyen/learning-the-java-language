@@ -6,7 +6,6 @@ import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class StringExamplesTest {
 
@@ -68,5 +67,16 @@ class StringExamplesTest {
     void createFormatString() {
         String fs = sut.createFormatString(7f, 5, "Java");
         System.out.println(fs);
+    }
+
+    @Test
+    void parseFromString() {
+        String[] s = new String[]{"3", "5", "45.5"};
+        float a = Float.parseFloat(s[0]);
+        int b = Integer.parseInt(s[1]);
+        double c = Double.parseDouble(s[2]);
+        assertEquals(3f, a);
+        assertEquals(5, b);
+        assertEquals(45.5, c);
     }
 }

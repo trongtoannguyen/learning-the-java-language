@@ -2,6 +2,10 @@ package com.know.java.numbers_strings.strings;
 
 public class StringExamples {
 
+    public static void main(String[] args) {
+        new StringExamples().parseTypeFromString(new String[]{"3", "5", "9"});
+    }
+
     public void createStrings() {
         // the most direct way to create a string is string literal:
         String greeting = "Hello world!"; // in this case, the compiler creates a string object with a value "Hello world!"
@@ -45,5 +49,14 @@ public class StringExamples {
                         "integer variable is %d, " +
                         " and the string is %s",
                 floatVar, intVar, stringVar);
+    }
+
+    public void parseTypeFromString(String[] args) {
+        float a = Float.parseFloat(args[0]);
+        int b = Integer.parseInt(args[1]);
+        double c = Double.parseDouble(args[2]);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
     }
 }

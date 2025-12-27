@@ -50,22 +50,51 @@ object.
 
 Using String's static `format()` method allows you to create a formatted string that you can reuse, as apposed to a
 one-time print statement. For example, instead of
+
 ```java
-System.out.printf("The value of the float " +
-                  "variable is %f, while " +
-                  "the value of the " + 
-                  "integer variable is %d, " +
-                  "and the string is %s", 
+System.out.printf("The value of the float "+
+                          "variable is %f, while "+
+                          "the value of the "+
+                          "integer variable is %d, "+
+                          "and the string is %s",
                   floatVar, intVar, stringVar);
 ```
+
 you can write
+
 ```java
 String fs;
-fs = String.format("The value of the float " +
-                   "variable is %f, while " +
-                   "the value of the " + 
-                   "integer variable is %d, " +
-                   " and the string is %s",
-                   floatVar, intVar, stringVar);
-IO.println(fs);
+fs =String.
+
+format("The value of the float "+
+               "variable is %f, while "+
+               "the value of the "+
+               "integer variable is %d, "+
+               " and the string is %s",
+       floatVar, intVar, stringVar);
+IO.
+
+println(fs);
+```
+
+## Convert Strings to Numbers
+
+The `Number` subclasses that wrap primitie numeric types(`Byte`, `Integer`, `Double`, .etc.) each provide a class method
+named `parse{Type}()` that converts a string to a requivalent object type.
+
+For example:
+
+```java
+public static void main(String[] args){
+    if (args.length == 2) {
+         // convert strings to numbers
+        float a = Float.parseFloat(args[0]);
+        float b = Float.parseFloat(args[1]);
+        int c = Integer.parseInt(args[0]);
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+    }
+}
 ```
